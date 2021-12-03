@@ -1,12 +1,13 @@
 from datetime import datetime, timedelta
-from pyrogram import Client, Filters, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram import Client, filters
 from bot import user_time
 from config import youtube_next_fetch
 from helper.ytdlfunc import extractYt, create_buttons
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-
-
+@Client.on_message(filters.regex(pattern=".*http.*"))
+async def echo(bot, update):
     userLastDownloadTime = user_time.get(message.chat.id)
     try:
         if userLastDownloadTime > datetime.now():
