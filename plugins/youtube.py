@@ -8,7 +8,7 @@ ytregex = r"^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[
 
 
 @Client.on_message(Filters.regex(pattern=".*http.*")
-async def ytdl(_, message):
+async def ytdl(message):
     userLastDownloadTime = user_time.get(message.chat.id)
     try:
         if userLastDownloadTime > datetime.now():
