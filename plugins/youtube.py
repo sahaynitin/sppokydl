@@ -5,7 +5,7 @@ from config import youtube_next_fetch
 from helper.ytdlfunc import extractYt, create_buttons
 
 
-@Client.on_message(Filters.regex(pattern=".*http.*")
+
 
     userLastDownloadTime = user_time.get(message.chat.id)
     try:
