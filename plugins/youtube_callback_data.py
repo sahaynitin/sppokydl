@@ -23,12 +23,12 @@ async def youtube_dl_call_back(bot, update):
         print(media_type)
         if media_type == 'audio':
             buttons = InlineKeyboardMarkup([[InlineKeyboardButton(
-                "Audio", callback_data=f"{media_type}||{format_id}||{yturl}"), InlineKeyboardButton("Document",
-                                                                                                    callback_data=f"docaudio||{format_id}||{yturl}")]])
+                "Audio", callback_data=f"{media_type}||{format_id}||"), InlineKeyboardButton("Document",
+                                                                                                    callback_data=f"docaudio||{format_id}||")]])
         else:
             buttons = InlineKeyboardMarkup([[InlineKeyboardButton(
-                "Video", callback_data=f"{media_type}||{format_id}||{yturl}"), InlineKeyboardButton("Document",
-                                                                                                    callback_data=f"docvideo||{format_id}||{yturl}")]])
+                "Video", callback_data=f"{media_type}||{format_id}||"), InlineKeyboardButton("Document",
+                                                                                                    callback_data=f"docvideo||{format_id}||")]])
 
         await m.edit_message_reply_markup(buttons)
 
