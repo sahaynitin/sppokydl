@@ -4,7 +4,7 @@ from bot import user_time
 from config import youtube_next_fetch
 from helper.ytdlfunc import extractYt, create_buttons
 from pyrogram import InlineKeyboardMarkup, InlineKeyboardButton
-
+from pyrogram import message
 
 @Client.on_message(Filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
