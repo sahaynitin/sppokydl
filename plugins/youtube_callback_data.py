@@ -15,7 +15,7 @@ from helper.ytdlfunc import downloadvideocli, downloadaudiocli
 
 
 @Client.on_callback_query()
-async def echo update(bot, message):
+async def echo(bot, message):
     cb_data = m.data
     if cb_data.startswith("ytdata||"):
         yturl = cb_data.split("||")[-1]
