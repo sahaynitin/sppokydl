@@ -3,7 +3,7 @@ from pyrogram import Client, Filters, StopPropagation, InlineKeyboardButton, Inl
 import yt_dlp
 from utils.util import humanbytes
 import asyncio
-import yt-dlp
+
 
 def buttonmap(item):
     quality = item['format']
