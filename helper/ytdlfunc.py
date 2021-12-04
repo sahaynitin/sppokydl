@@ -3,7 +3,7 @@ from pyrogram import Client, Filters, StopPropagation, InlineKeyboardButton, Inl
 import yt_dlp
 from utils.util import humanbytes
 import asyncio
-
+import yt-dlp
 
 def buttonmap(item):
     quality = item['format']
@@ -44,7 +44,7 @@ def extractYt(yturl):
 #         'noplaylist': True,
 #         'progress_hooks': [custom_progress],
 #     }
-#     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+#     with yt_dlp.yt-dlp(ydl_opts) as ydl:
 #         ydl.download([url])
 
 
