@@ -15,7 +15,7 @@ from helper.ytdlfunc import downloadvideocli, downloadaudiocli
 
 
 @Client.on_callback_query()
-async def catch_youtube_fmtid(c, m):
+async def echo update(bot, message):
     cb_data = m.data
     if cb_data.startswith("ytdata||"):
         yturl = cb_data.split("||")[-1]
@@ -65,7 +65,6 @@ async def catch_youtube_dldata(c, q):
         "--audio-format", "mp3",
         "--audio-quality", format_id,
         "-o", filepath,
-        yturl,
 
     ]
 
@@ -75,7 +74,7 @@ async def catch_youtube_dldata(c, q):
         "--embed-subs",
         "-f", f"{format_id}+bestaudio",
         "-o", filepath,
-        "--hls-prefer-ffmpeg", yturl]
+        "--hls-prefer-ffmpeg"]
 
     loop = asyncio.get_event_loop()
 
