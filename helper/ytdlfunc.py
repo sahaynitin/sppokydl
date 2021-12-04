@@ -21,16 +21,16 @@ def create_buttons(quailitylist):
 
 # extract Youtube info
 def extractYt(yturl):
-    ydl = yt_dlp.YoutubeDL()
+    yt_dlp = yt_dlp.YoutubeDL()
     with ydl:
         qualityList = []
-        r = ydl.extract_info(yturl, download=False)
+        r = yt_dlp.extract_info(yt_dlp_url, download=False)
         for format in r['formats']:
             # Filter dash video(without audio)
             if not "dash" in str(format['format']).lower():
                 qualityList.append(
                 {"format": format['format'], "filesize": format['filesize'], "format_id": format['format_id'],
-                 "yturl": yturl})
+                 "yt_dlp_url": yt_dlp_url})
 
         return r['title'], r['thumbnail'], qualityList
 
@@ -38,7 +38,7 @@ def extractYt(yturl):
 #  Need to work on progress
 
 # def downloadyt(url, fmid, custom_progress):
-#     ydl_opts = {
+#     yt_dl_opts = {
 #         'format': f"{fmid}+bestaudio",
 #         "outtmpl": "test+.%(ext)s",
 #         'noplaylist': True,
